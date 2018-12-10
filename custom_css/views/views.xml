@@ -1,0 +1,70 @@
+<odoo>
+  <template id="assets_backend" name="custom_assets" inherit_id="web.assets_backend">
+    <xpath expr="." position="inside">
+      <link rel="stylesheet" href="custom_css/static/src/css/my-style.css"/>
+    </xpath>
+  </template>
+  <template id="assets_frontend" name="custom_assets" inherit_id="web.assets_frontend">
+    <xpath expr="." position="inside">
+      <link rel="stylesheet" href="custom_css/static/src/css/front-style.css"/>
+    </xpath>
+  </template>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="custom_css.list">
+      <field name="name">customCSS list</field>
+      <field name="model">custom_css.custom_css</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="custom_css.action_window">
+      <field name="name">customCSS window</field>
+      <field name="res_model">custom_css.custom_css</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="custom_css.action_server">
+      <field name="name">customCSS server</field>
+      <field name="model_id" ref="model_custom_css_custom_css"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="customCSS" id="custom_css.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="custom_css.menu_1" parent="custom_css.menu_root"/>
+    <menuitem name="Menu 2" id="custom_css.menu_2" parent="custom_css.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="custom_css.menu_1_list" parent="custom_css.menu_1"
+              action="custom_css.action_window"/>
+    <menuitem name="Server to list" id="custom_css" parent="custom_css.menu_2"
+              action="custom_css.action_server"/>
+    -->
+  </data>
+</odoo>
